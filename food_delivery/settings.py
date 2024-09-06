@@ -27,7 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'authuser',
-    'restaurant'
+    'restaurant',
+    'rest_framework.authtoken'
+
 ]
 
 # Specifies the custom User model located in the 'authuser' app to be used as the default user model for authentication.
