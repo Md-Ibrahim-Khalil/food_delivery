@@ -55,10 +55,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         return self.name or self.email.split('@')[0]
     
-# custom permission class    
+#custom permission class      
 class IsStaff(BasePermission):
     def has_permission(self, request, view):
-        # Check if the user is authenticated and is_staff
         return request.user and request.user.is_authenticated and request.user.is_staff
-  
+
+class IsOwner(BasePermission):
+    def has_permission(self, request, view):
+        return request.user and request.user.is_authenticated and request.user.is_owner
 

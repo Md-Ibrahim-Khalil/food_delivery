@@ -28,7 +28,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'authuser',
     'restaurant',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'menu',
+    'category',
 
 ]
 

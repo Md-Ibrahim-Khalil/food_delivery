@@ -1,30 +1,29 @@
 from .models import Restaurant
 from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
-from .serializers import RestaurantSerializer
+from .serializers import MenuSerializer
 from authuser.models import IsStaff 
 from rest_framework.authentication import TokenAuthentication
 
-class RestaurantCreateView(CreateAPIView):
+class MenuCreateView(CreateAPIView):
     permission_classes = [IsStaff]
     authentication_classes = [TokenAuthentication]
-    serializer_class = RestaurantSerializer
-    queryset = Restaurant.objects.all()
-
-class RestaurantUpdateView(UpdateAPIView):
-    permission_classes = [IsStaff]
-    authentication_classes = [TokenAuthentication]
-    serializer_class = RestaurantSerializer
+    serializer_class = MenuSerializer
     queryset = Restaurant.objects.all()
     
-class RestaurantListView(ListAPIView):
+class MenuUpdateView(UpdateAPIView):
     permission_classes = [IsStaff]
     authentication_classes = [TokenAuthentication]
-    serializer_class = RestaurantSerializer
+    serializer_class = MenuSerializer
     queryset = Restaurant.objects.all()
     
-    
-class RestaurantDeleteView(DestroyAPIView):
+class MenuListView(ListAPIView):
     permission_classes = [IsStaff]
     authentication_classes = [TokenAuthentication]
-    serializer_class = RestaurantSerializer
+    serializer_class = MenuSerializer
+    queryset = Restaurant.objects.all()
+    
+class MenuDeleteView(DestroyAPIView):
+    permission_classes = [IsStaff]
+    authentication_classes = [TokenAuthentication]
+    serializer_class = MenuSerializer
     queryset = Restaurant.objects.all()
