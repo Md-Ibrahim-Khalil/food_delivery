@@ -8,4 +8,5 @@ urlpatterns = [
     path("restaurant/", include("restaurant.urls")),
     path("menu/", include("menu.urls")),
     path("category/", include("category.urls")),
+    path("item/", include("item.urls")),
 ]

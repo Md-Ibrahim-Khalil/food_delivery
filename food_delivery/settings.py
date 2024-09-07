@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'menu',
     'category',
+    'item',
+    'order',
 
 ]
 
